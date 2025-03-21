@@ -1,5 +1,7 @@
 @import 'tailwindcss';
-@plugin "daisyui";
+@plugin "daisyui" {
+    themes: all;
+  }
 @import '../../vendor/livewire/flux/dist/flux.css';
 
 @source "../views";
@@ -65,3 +67,118 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+/* Custom Luxury Casino Theme */
+[data-theme="luxury"] {
+    /* Override the luxury theme background with casino blackjack green */
+    --b1: 194 54% 7%; /* Keep the base colors */
+    --bc: 0 0% 98%;
+    
+    /* Change the background color to casino blackjack green */
+    --b2: 138 30% 17%; /* Blackjack table green */
+    --b3: 138 30% 12%; /* A darker variant for contrast */
+    
+    /* Keep other color variables from luxury theme */
+    --p: 27 100% 36%;
+    --pc: 0 0% 98%;
+    --s: 300 24% 25%;
+    --sc: 0 0% 98%;
+    --a: 340 66% 48%;
+    --ac: 0 0% 98%;
+    --n: 204 11% 11%;
+    --nc: 0 0% 98%;
+    --in: 170 66% 36%;
+    --inc: 0 0% 98%;
+    --su: 120 66% 36%;
+    --suc: 0 0% 98%;
+    --wa: 30 66% 36%;
+    --wac: 0 0% 98%;
+    --er: 0 66% 36%;
+    --erc: 0 0% 98%;
+    
+    /* Rounded box & button settings */
+    --rounded-box: 0.5rem;
+    --rounded-btn: 0.5rem;
+    --rounded-badge: 0.5rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-text-case: uppercase;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+  }
+  
+  /* Add !important to ensure the background styles are applied */
+  [data-theme="luxury"] body,
+  html[data-theme="luxury"] body {
+    background-color: hsl(138 30% 17%) !important; /* Fallback color */
+    background-image: url('../images/greenbg.jpg') !important; /* Relative path might work better */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Rest of your CSS remains the same */
+  /* Custom styles for blackjack table when casino theme is active */
+  [data-theme="luxury"] #blackjack {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+  }
+  
+  /* Enhanced card styling for casino theme */
+  [data-theme="luxury"] .card {
+    border: 1px solid hsl(27, 100%, 36%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Gold accent for buttons in casino theme */
+  [data-theme="luxury"] .btn-primary {
+    border: 2px solid hsl(27, 100%, 36%);
+  }
+  
+  /* Style for the casino theme toggle */
+  .theme-controller[value="luxury"] + .label-text {
+    color: hsl(27, 100%, 36%);
+    font-weight: bold;
+  }
+  
+  /* Improve readability of text over background image */
+  [data-theme="luxury"] section {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+    color: white;
+  }
+  
+  /* For better visibility of headers on dark background */
+  [data-theme="luxury"] h1, 
+  [data-theme="luxury"] h2, 
+  [data-theme="luxury"] h3 {
+    color: hsl(27, 100%, 36%);
+  }
+  
+  /* Custom styles for project carousel in casino theme */
+  [data-theme="luxury"] .carousel {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid hsl(27, 100%, 36%);
+  }
+  
+  /* Custom styles for modal in casino theme */
+  [data-theme="luxury"] .modal-box {
+    background-color: hsl(138, 30%, 12%);
+    border: 2px solid hsl(27, 100%, 36%);
+    color: white;
+  }
+  
+  /* Custom styles for footer in casino theme */
+  [data-theme="luxury"] footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-top: 2px solid hsl(27, 100%, 36%);
+  }
